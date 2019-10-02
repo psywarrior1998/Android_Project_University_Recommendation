@@ -21,19 +21,6 @@
         app:layout_constraintVertical_bias="0.015" />
 
     <EditText
-        android:id="@+id/educationtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Education Level"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.623" />
-
-    <EditText
         android:id="@+id/dateinput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,11 +49,13 @@
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="194dp"
-        android:layout_height="57dp"
+        android:layout_height="132dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.579" />
 
     <ImageView
         android:id="@+id/imageView"
