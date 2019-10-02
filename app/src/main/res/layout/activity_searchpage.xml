@@ -7,8 +7,8 @@
     tools:context=".searchpage">
 
     <LinearLayout
-        android:layout_width="396dp"
-        android:layout_height="148dp"
+        android:layout_width="398dp"
+        android:layout_height="270dp"
         android:layout_marginBottom="260dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,16 +24,9 @@
             android:orientation="horizontal">
 
             <Spinner
-                android:id="@+id/spinner6"
+                android:id="@+id/Course"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="1dp" />
-
-            <Spinner
-                android:id="@+id/spinner8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:padding="1dp" />
 
@@ -45,18 +38,21 @@
             android:orientation="horizontal">
 
             <Spinner
-                android:id="@+id/spinner9"
+                android:id="@+id/Countries"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:padding="1dp" />
 
-            <Spinner
-                android:id="@+id/spinner10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <EditText
+                android:id="@+id/gre"
+                android:layout_width="396dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="1dp" />
+                android:ems="10"
+                android:hint="GRE SCORE"
+                android:inputType="numberDecimal" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -70,35 +66,38 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="1dp"
-                android:text="Exams given" />
+                android:text="Exams given"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="#000000" />
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/toefl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="1dp"
-                android:text="CheckBox" />
+                android:text="TOEFL " />
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/ielts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="1dp"
-                android:text="CheckBox" />
+                android:text="IELTS" />
 
         </LinearLayout>
 
 
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:text="Button" />
 
+        <Button
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:padding="4dp"
+            android:text="Search" />
     </LinearLayout>
 
 
