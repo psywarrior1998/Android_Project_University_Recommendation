@@ -14,10 +14,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class signup extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private static final String TAG = "activity_signup";
+    private String e;
+    private String p;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +34,14 @@ public class signup extends AppCompatActivity {
         EditText pass = (EditText) findViewById(R.id.passtext);
         String email = emailid.getText().toString();
         String password = pass.getText().toString();
+        e=email;
+        p=password;
 
         registerAccount(email,password);
     }
-    private void registerAccount(String email, String password) {
+    private void registerAccount(String email,String password) {
+        String e=email;
+        String p=password;
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -44,8 +51,8 @@ public class signup extends AppCompatActivity {
                             Toast.makeText(signup.this,
                                     "Registered.",
                                     Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(signup.this, MainActivity.class);
-                            startActivity(intent);
+                            move(task.getResult().getUser());
+
                         } else {
                             Log.d(TAG, "register account failed", task.getException());
                             Toast.makeText(signup.this,
@@ -54,5 +61,14 @@ public class signup extends AppCompatActivity {
                         }
                     }
                 });
+    }
+    public void move(FirebaseUser User){
+        Intent intent = new Intent(signup.this, detailspage.class);
+        Bundle b = new Bundle();
+        b.putString("Username",e);
+        b.putString("Password",p);
+//        b.putString("uId",User.getUid());
+        intent.putExtras(b);
+        startActivity(intent);
     }
 }
