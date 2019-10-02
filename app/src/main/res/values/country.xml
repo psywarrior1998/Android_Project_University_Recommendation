@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="country">
+        <item>--Choose Country--</item>
+        <item>Australia</item>
+        <item>Canada</item>
+        <item>Costa Rica</item>
+        <item>France</item>
+        <item>Germany</item>
+        <item>Mexico</item>
+        <item>Netherlands</item>
+        <item>New Zealand</item>
+        <item>Spain</item>
+        <item>Switzerland</item>
+        <item>Thailand</item>
+        <item>United Kingdom</item>
+        <item>United States Of America</item>
+    </string-array>
+    <string-array name="highesteducation">
+        <item>--highest education completed--</item>
+        <item>Secondary(10)</item>
+        <item>Higher Secondary(10+2)</item>
+        <item>Graduate(Degree)</item>
+        <item>Postgraduate</item>
+    </string-array>
+    <string-array name="course">
+        <item>--Courses--</item>
+        <item>Master of Arts</item>
+        <item>Master of Science</item>
+        <item>Master of Research	</item>
+        <item>Master of Philosophy</item>
+        <item>Master of Fine Arts	</item>
+        <item>Master of Letters	</item>
+        <item>Master of Laws	</item>
+        <item>Legal Practice Course</item>
+        <item>Graduate Diploma in Law</item>
+        <item>Master of Business Administration</item>
+        <item>Masters in Management	</item>
+        <item>Master of Engineering	</item>
+        <item>Master of Social Work	</item>
+        <item>Postgraduate Certificate	</item>
+        <item>Postgraduate Diploma	</item>
+        <item>Postgraduate Certificate in Education</item>
+        <item>Professional Diploma in Education</item>
+    </string-array>
+</resources>
