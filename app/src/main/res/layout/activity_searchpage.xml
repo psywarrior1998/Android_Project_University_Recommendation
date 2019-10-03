@@ -90,12 +90,11 @@
         </LinearLayout>
 
 
-
-
         <Button
             android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="59dp"
+            android:onClick="search"
             android:padding="4dp"
             android:text="Search" />
     </LinearLayout>

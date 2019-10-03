@@ -2,8 +2,11 @@ package com.example.androidproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
-
     }
 
     public void login(View view) {
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this,
                                     "Authenticated\n ---welcome---",
                                     Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(MainActivity.this, detailspage.class);
+                            Intent intent = new Intent(MainActivity.this, searchpage.class);
                             startActivity(intent);
                         } else {
                             Log.e(TAG, "Login fail", task.getException());

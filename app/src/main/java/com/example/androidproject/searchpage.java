@@ -23,4 +23,8 @@ public class searchpage extends AppCompatActivity {
         course.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         courses.setAdapter(course);
     }
+
+    public void search(View view) {
+
+    }
 }
