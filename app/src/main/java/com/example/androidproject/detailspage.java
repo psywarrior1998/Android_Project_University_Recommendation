@@ -42,21 +42,10 @@ import com.google.type.Date;
 
 public class detailspage extends AppCompatActivity {
 
-    public String dob;
-//    String uID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailspage);
-        Intent i = getIntent();
-//        Bundle b = getIntent().getExtras();
-        String email = i.getStringExtra("username");
-        TextView e =  (TextView)findViewById(R.id.email);
-        e.setText(email);
-        String password = i.getStringExtra("password");
-        TextView p = (TextView) findViewById(R.id.password);
-        p.setText(password);
-//        this.uID = b.getString("uId");
         PreviewConfig previewConfig = new PreviewConfig.Builder().build();
         ImageCaptureConfig imageCaptureConfig =
                 new ImageCaptureConfig.Builder().build();
@@ -78,51 +67,19 @@ public class detailspage extends AppCompatActivity {
     }
 
     public void submit(View view) {
-        // Write a message to the database
         FirebaseDatabase data = FirebaseDatabase.getInstance();
         DatabaseReference path = data.getReference("/userinfo");
         TextView e = (TextView) findViewById(R.id.email);
-        TextView p = (TextView) findViewById(R.id.password);
         EditText name = findViewById(R.id.nametext);
         EditText mobile = findViewById(R.id.phonetext);
-        CalendarView DOB = (CalendarView) findViewById(R.id.DOB);
-//        Calendar c = Calendar.getInstance();
         String Name = name.getText().toString();
         final SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy", Locale.US);
-//        Date date = new Date(DOB);
-        String dob = df.format(DOB.getDate());
-//        String dob = df.format();
-//        CalendarView DOB = (CalendarView) findViewById(R.id.DOB);
-
-
-//            @Override
-//            public void onSelectedDayChange(CalendarView arg0, int year, int month,
-//                                            int date) {
-//                TextView dob = (TextView) findViewById(R.id.date_of_birth);
-//                dob.setText(month + "/"+ date +"/"+year);
-//            }
-//        });
-        TextView d = (TextView) findViewById(R.id.date_of_birth);
+        TextView d = (TextView) findViewById(R.id.DOB);
         String Mobile = mobile.getText().toString();
         String email= e.getText().toString();
-        String password = p.getText().toString();
-//        String dob = d.getText().toString();
-//        String password = this.password;
-//        String dob = this.dob;
-//        User user = new User();
-//        user.setEmail_Id(email);
-//        user.setDateofbirth(dob);
-//        user.setPassword(password);
-//        user.setName(Name);
-//        user.setMobile_Number(Mobile);
-//        final String userId=getUID();
-//        path.child("userinfo").child(uID).setValue(user);
-//        path.child("userinfo").push();
-        String finaltry = "{ \"Date_Of_Birth\" : " + dob + ", \"Name\" : " + Name
-                + ", \"Mobile_Number\" : " + Mobile + "}";
-//        Map<String,User> user = new HashMap<>();
-//        user.put(email,new User(email,password,dob,Name,Mobile));
-        path.push().setValue(finaltry);
+        String dob = d.getText().toString();
+        User user = new User(email,dob,Name,Mobile);
+        path.push().setValue(user);
         Intent intent = new Intent(detailspage.this,MainActivity.class);
         startActivity(intent);
     }
