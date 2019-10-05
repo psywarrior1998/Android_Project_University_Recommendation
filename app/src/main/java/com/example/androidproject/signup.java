@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -65,8 +66,12 @@ public class signup extends AppCompatActivity {
     public void move(FirebaseUser User){
         Intent intent = new Intent(signup.this, detailspage.class);
         Bundle b = new Bundle();
-        b.putString("Username",e);
-        b.putString("Password",p);
+        EditText emailid = (EditText) findViewById(R.id.usertext);
+        EditText pass = (EditText) findViewById(R.id.passtext);
+        String email = emailid.getText().toString();
+        String password = pass.getText().toString();
+        b.putString("Username",email);
+        b.putString("Password",password);
 //        b.putString("uId",User.getUid());
         intent.putExtras(b);
         startActivity(intent);
