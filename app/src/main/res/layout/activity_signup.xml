@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".signup">
+
     <EditText
         android:id="@+id/usertext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:ems="10"
-        android:hint="username"
+        android:hint="Email ID"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/passtext"
         app:layout_constraintEnd_toEndOf="parent"

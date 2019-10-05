@@ -2,7 +2,7 @@
 <resources>
     <string-array name="country">
         <item>--Choose Country--</item>
-        <item>Australia</item>
+        <!--<item>Australia</item>-->
         <!--<item>Canada</item>
         <item>Costa Rica</item>
         <item>France</item>
@@ -14,7 +14,7 @@
         <item>Spain</item>
         <item>Switzerland</item>
         <item>Thailand</item>-->
-        <item>United Kingdom</item>
+        <!--<item>United Kingdom</item>-->
         <item>United States Of America</item>
     </string-array>
     <string-array name="highesteducation">
@@ -28,7 +28,7 @@
         <item> --Courses-- </item>
         <!--<item>Master of Arts</item>-->
         <item>Master of Science</item>
-        <item>Master of Research	</item>
+        <!--<item>Master of Research</item>-->
        <!-- <item>Master of Philosophy</item>
         <item>Master of Fine Arts	</item>
         <item>Master of Letters	</item>
