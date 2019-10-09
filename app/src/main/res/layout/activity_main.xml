@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/androidhorse">
 
     <EditText
         android:id="@+id/usertext"
@@ -14,6 +15,7 @@
         android:ems="10"
         android:hint="Email ID"
         android:inputType="textPersonName"
+        android:background="@color/cardview_light_background"
         app:layout_constraintBottom_toTopOf="@+id/passtext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +26,8 @@
         android:id="@+id/passtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="468dp"
+        android:layout_marginTop="248dp"
+        android:background="@color/cardview_light_background"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
@@ -32,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/loginbutton"

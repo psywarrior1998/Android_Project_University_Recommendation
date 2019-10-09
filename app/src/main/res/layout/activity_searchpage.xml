@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".searchpage">
+    tools:context=".searchpage"
+    android:background="@drawable/androidhorse">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="398dp"
         android:layout_height="270dp"
         android:layout_marginBottom="260dp"
+        android:background="#00BCD4"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,17 +63,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="1dp"
-                android:text="Exams given"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="#000000" />
-
             <CheckBox
                 android:id="@+id/toefl"
                 android:layout_width="wrap_content"
@@ -88,6 +79,17 @@
                 android:padding="1dp"
                 android:text="IELTS" />
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="1dp"
+                android:text="Exams given"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="#000000" />
+
 
         </LinearLayout>
 
@@ -95,12 +97,12 @@
 
 
         <Button
-        android:id="@+id/search"
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:onClick="search"
-        android:padding="4dp"
-        android:text="Search" />
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:onClick="search"
+            android:padding="4dp"
+            android:text="Search" />
 
     </LinearLayout>
 
