@@ -3,6 +3,7 @@ package com.example.androidproject;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -10,7 +11,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -51,6 +54,25 @@ public class CollegeDisplay extends FragmentActivity implements OnMapReadyCallba
         LatLng sydney = new LatLng(-34, 151);
         universitydisplayer();
 //        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                Intent i = new Intent(CollegeDisplay.this, DisplayWebSite.class);
+                String title = marker.getTitle();
+                if(title.equals("Massachusetts Institute of Technology")){
+                    SiteShower.collegesite="http://www.mit.edu/";
+                    startActivity(i);
+                }
+                else if(title.equals("California Institute of Technology")){
+                    SiteShower.collegesite = "https://www.caltech.edu/";
+                    startActivity(i);
+                }
+                else if(title.equals("University of Chicago")){
+                    SiteShower.collegesite = "https://www.uchicago.edu/";
+                    startActivity(i);
+                }
+            }
+        });
 
     }
     public void universitydisplayer(){
@@ -63,16 +85,16 @@ public class CollegeDisplay extends FragmentActivity implements OnMapReadyCallba
                     LatLng mit = new LatLng(42.359760,-71.091430);
                     mMap.addMarker(new MarkerOptions().position(mit).title("Massachusetts Institute of Technology").snippet("Master of Science 330"));
                     LatLng cit = new LatLng(34.135880,-118.132260);
-                    mMap.addMarker(new MarkerOptions().position(cit).title("California Institute of Technology ").snippet(" Master of Science 240"));
+                    mMap.addMarker(new MarkerOptions().position(cit).title("California Institute of Technology").snippet(" Master of Science 240"));
                     LatLng hu = new LatLng(41.790050,-87.599810);
-                    mMap.addMarker(new MarkerOptions().position(hu).title("University of Chicago").snippet("Master of Science  290"));
+                    mMap.addMarker(new MarkerOptions().position(hu).title("    University of Chicago    ").snippet("Master of Science 290"));
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(mit));
                 }
                 else if(300 > GRE ){
                     LatLng cit = new LatLng(34.135880,-118.132260);
-                    mMap.addMarker(new MarkerOptions().position(cit).title("California Institute of Technology ").snippet(" Master of Science 270"));
+                    mMap.addMarker(new MarkerOptions().position(cit).title("California Institute of Technology").snippet(" Master of Science").snippet("240"));
                     LatLng hu = new LatLng(41.790050,-87.599810);
-                    mMap.addMarker(new MarkerOptions().position(hu).title("University of Chicago ").snippet(" Master of Science \n 290"));
+                    mMap.addMarker(new MarkerOptions().position(hu).title("University of Chicago").snippet("Master of Science").snippet("290"));
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(hu));
                 }
             }
